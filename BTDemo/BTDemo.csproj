@@ -128,6 +128,8 @@
     <Content Include="Scripts\esm\popper.js.map" />
     <Content Include="Scripts\esm\popper-utils.min.js.map" />
     <Content Include="Scripts\esm\popper-utils.js.map" />
+    <Content Include="Areas\API\Views\web.config" />
+    <Content Include="Areas\API\Views\Json\Customers.cshtml" />
     <None Include="Scripts\jquery-3.4.1.intellisense.js" />
     <Content Include="Scripts\jquery-3.4.1.js" />
     <Content Include="Scripts\jquery-3.4.1.min.js" />
@@ -155,8 +157,14 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="App_Start\RouteConfig.cs" />
+    <Compile Include="Areas\API\APIAreaRegistration.cs" />
+    <Compile Include="Areas\API\Controllers\JsonController.cs" />
+    <Compile Include="Areas\API\Formatter\JsonFormat.cs" />
+    <Compile Include="Areas\API\Models\TablePaginModel.cs" />
     <Compile Include="Controllers\DBFirstController.cs" />
+    <Compile Include="Controllers\HomeController.cs" />
     <Compile Include="DB\DbContext.cs" />
+    <Compile Include="DB\DbEntities.cs" />
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
@@ -176,6 +184,7 @@
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
+    <Folder Include="Areas\API\Views\Shared\" />
     <Folder Include="Models\" />
   </ItemGroup>
   <ItemGroup>
@@ -183,6 +192,12 @@
   </ItemGroup>
   <ItemGroup>
     <TypeScriptCompile Include="Scripts\index.d.ts" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\BTDemo.Entities\BTDemo.Entities.csproj">
+      <Project>{d317491f-db72-4d69-b2dc-8e1dc0af0f02}</Project>
+      <Name>BTDemo.Entities</Name>
+    </ProjectReference>
   </ItemGroup>
   <PropertyGroup>
     <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>
